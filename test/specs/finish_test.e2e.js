@@ -2,11 +2,12 @@ import { expect } from '@wdio/globals'
 import { Key } from 'webdriverio'
 let github = `https://github.com/`
 //Final test
-describe("First test-case: Registration", () => {
+describe.only("First test-case: Registration", () => {
     it ("Part one: click Sign up", async () => {
         await browser.url(github)
 
-        const signUp = await $('/html/body/div[1]/div[1]/header/div/div[2]/div/div/a')
+        // const signUp = await $('/html/body/div[1]/div[1]/header/div/div[2]/div/div/a')
+        const signUp = await $('.HeaderMenu-link--sign-up')
         await signUp.click()
         console.log("SignUp click check!");
         await browser.pause(5000)
